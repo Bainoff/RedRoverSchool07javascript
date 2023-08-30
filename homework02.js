@@ -39,15 +39,24 @@ if (oper != `+` && oper != `-` && oper != `/` && oper != `*`) {
 // Каждый день она проползает вверх на 3 метра, а каждую ночь съезжает вниз на 2 метра.
 // За сколько дней она доползёт до вершины стены.»
 
+
+// for (i = 1; i < days; i++) {
+//     height += 3;
+//     if (height >= 5) {
+//         console.log(i + ` days to the top of the wall`)
+//         break;
+//     }
+//     height -= 2;
+// }
 let height = 0;
-for (i = 1; i < 5; i++) {
+let days = 0;
+while (height <= 5) {
+    days++;
     height += 3;
-    if (height >= 5) {
-        console.log(i + ` days to the top of the wall`)
-        break;
-    }
+    if (height >= 5) break;
     height -= 2;
 }
+console.log(days + ` days to the top of the wall`)
 
 // Креативное задание*:
 // 2.1 Напишите следующую программу:
@@ -61,6 +70,7 @@ for (i = 1; i < 5; i++) {
 
 let coffee = `americano`
 let size = `big`
+
 let latteName = `LATTE`
 let cappucchinoName = `CAPPUCCHINO`
 let americanoName = `AMERICANO`
