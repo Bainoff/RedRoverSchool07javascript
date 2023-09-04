@@ -16,13 +16,13 @@ const arrNums = [1, 2, 3, 4, 5, 6]
 const lastEl = arrNums.pop() //removes LAST element form array and writes it into variable
 console.log(lastEl)
 
-const firstEl = arrNums.shift()  //removes LAST element form array and writes it into variable
+const firstEl = arrNums.shift()  //removes LAST element from array and writes it into variable
 console.log(firstEl)
 
 arrNums.push(7, 8, 9, 10) //adds elements at the end of array
 console.log(arrNums)
 
-arrNums.unshift(-3, -2, -1, 0) //adds elements at the end of array
+arrNums.unshift(-3, -2, -1, 0) //adds elements at the start of array
 console.log(arrNums)
 
 for(let i of arrNums)
