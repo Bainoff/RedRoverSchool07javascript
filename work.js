@@ -10,5 +10,3 @@ function stringy(size) {
 
 
   console.log(stringy(11))
-  console.log(+true)
-  console.log("ddr" + +true)
