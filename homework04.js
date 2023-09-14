@@ -77,7 +77,6 @@ for (let line = 0; line <= spruceSize; line++){
 // 5 9 12 14 15
 
 console.log()
-let arr2 = [[1], [2,6], [3,7,10], [4,8,11,13], [5,9,12,14,15]]
 let triangleSize = 5
 for (let line = 1; line <= triangleSize; line++){
     let str = line
@@ -104,7 +103,7 @@ while (height <= wall) {
     if (height >= wall) break;
     height -= regress;
 }
-console.log(days + ` days to the top of the wall`)
+console.log(`Snail task: ` + days + ` days to the top of the wall`)
 
 // 5. Задача с интервью*
 // У вас есть массив с тремя видами скобок, предположим 
@@ -116,20 +115,55 @@ console.log(days + ` days to the top of the wall`)
 // [ '{', '(’, '(', ')’, ')’, '}, '[', ']’ ] - у всех есть пара
 // [ '{', '(’, '(', ')’, ')’, '}, '[', '[’, ')’ ] - у трех нет пары
 
-// let arrBrackets = [ '{', ')', '(', ')', ')', '}', '[', ']', ')'];
-// let arrBrackets = [ ')', '{', '(', '(', ')', ')', '}', '[', ']', '(']
-// let arrBrackets = [ '{', '(', '(', ')', ')', '}', '[', ']']
-let arrBrackets = [ '{', '(', '(', ')', ')', '}', '[', '[', ')']
+// let arrBrackets = []
+// let arrBrackets = [ '{', ')', '(', ')', ')', '}', '[', ']', ')'] // brackets are not paired or sequence is corrupted
+// let arrBrackets = [ ')', '{', '(', '(', ')', ')', '}', '[', ']', '('] // brackets are not paired or sequence is corrupted
+// let arrBrackets = [ '{', '(', '(', ')', ')', '}', '[', ']'] // array is perfectly paired!
+// let arrBrackets = [ '{', '(', '(', ')', ')', '}', '[', '[', ')'] // brackets are not paired or sequence is corrupted
+// let arrBrackets = [ '{', '(', '}', '(', ')', ')', '[', ']' ] // sequence is corrupted
+// let arrBrackets = [ '{', '}', '(', ')', '[', ']' ] // array is perfectly paired!
 
-if (arrBrackets.length == 0) console.log("please, provide correct array")
-if ((arrBrackets[0] == '}' || arrBrackets[0] == ']' || arrBrackets[0] == ')') ||
+
+let curly = 0
+let round = 0
+let square = 0
+let i = 0
+if (arrBrackets.length == 0 || arrBrackets == null) {
+    console.log("please, provide correct array")
+}
+for (i = 0; i < arrBrackets.length; i++) {
+    if ((arrBrackets[0] == '}' || arrBrackets[0] == ']' || arrBrackets[0] == ')') ||
     (arrBrackets[arrBrackets.length-1] == '{' || arrBrackets[arrBrackets.length-1] == '[' ||
-    arrBrackets[arrBrackets.length-1] == '(') ||
-    arrBrackets.length % 2 != 0) console.log("brackets are not paired or sequence is corrupted")
-    for (const el of arrBrackets) {
-        
-        
+    arrBrackets[arrBrackets.length-1] == '(') || arrBrackets.length % 2 != 0) {
+        console.log("brackets are not paired or sequence is corrupted")
+        break
+    } else {
+        switch (arrBrackets[i]){
+            case '{': if (arrBrackets[i+1] == ')' || arrBrackets[i+1] == ']') {
+                console.log("sequence is corrupted1")
+                break
+            }
+            case '(': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ']') {
+                console.log("sequence is corrupted2")
+                break
+            }
+            case '[': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ')') {
+                console.log("sequence is corrupted3")
+                break
+            }
+        }
+        console.log(curly, round, square)
+        switch (arrBrackets[i]){
+            case "{": curly++
+            case "(": round++
+            case "[": square++
+            case "}": curly--
+            case ")": round--
+            case "]": square--
+        }    
     }
+}
+if (i == (arrBrackets.length-1) && curly+round+square == 0) console.log("array is perfectly paired!")
 
 // Креативное задание*(не показываем решение до понедельника):
 // Внедрите в свой код про кофе цикл, там, где это может понадобиться. Добавьте комментарии в код с пояснениями изменений,
