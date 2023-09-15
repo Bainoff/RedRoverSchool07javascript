@@ -124,46 +124,46 @@ console.log(`Snail task: ` + days + ` days to the top of the wall`)
 // let arrBrackets = [ '{', '}', '(', ')', '[', ']' ] // array is perfectly paired!
 
 
-let curly = 0
-let round = 0
-let square = 0
-let i = 0
-if (arrBrackets.length == 0 || arrBrackets == null) {
-    console.log("please, provide correct array")
-}
-for (i = 0; i < arrBrackets.length; i++) {
-    if ((arrBrackets[0] == '}' || arrBrackets[0] == ']' || arrBrackets[0] == ')') ||
-    (arrBrackets[arrBrackets.length-1] == '{' || arrBrackets[arrBrackets.length-1] == '[' ||
-    arrBrackets[arrBrackets.length-1] == '(') || arrBrackets.length % 2 != 0) {
-        console.log("brackets are not paired or sequence is corrupted")
-        break
-    } else {
-        switch (arrBrackets[i]){
-            case '{': if (arrBrackets[i+1] == ')' || arrBrackets[i+1] == ']') {
-                console.log("sequence is corrupted1")
-                break
-            }
-            case '(': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ']') {
-                console.log("sequence is corrupted2")
-                break
-            }
-            case '[': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ')') {
-                console.log("sequence is corrupted3")
-                break
-            }
-        }
-        console.log(curly, round, square)
-        switch (arrBrackets[i]){
-            case "{": curly++
-            case "(": round++
-            case "[": square++
-            case "}": curly--
-            case ")": round--
-            case "]": square--
-        }    
-    }
-}
-if (i == (arrBrackets.length-1) && curly+round+square == 0) console.log("array is perfectly paired!")
+// let curly = 0
+// let round = 0
+// let square = 0
+// let i = 0
+// if (arrBrackets.length == 0 || arrBrackets == null) {
+//     console.log("please, provide correct array")
+// }
+// for (i = 0; i < arrBrackets.length; i++) {
+//     if ((arrBrackets[0] == '}' || arrBrackets[0] == ']' || arrBrackets[0] == ')') ||
+//     (arrBrackets[arrBrackets.length-1] == '{' || arrBrackets[arrBrackets.length-1] == '[' ||
+//     arrBrackets[arrBrackets.length-1] == '(') || arrBrackets.length % 2 != 0) {
+//         console.log("brackets are not paired or sequence is corrupted")
+//         break
+//     } else {
+//         switch (arrBrackets[i]){
+//             case '{': if (arrBrackets[i+1] == ')' || arrBrackets[i+1] == ']') {
+//                 console.log("sequence is corrupted1")
+//                 break
+//             }
+//             case '(': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ']') {
+//                 console.log("sequence is corrupted2")
+//                 break
+//             }
+//             case '[': if (arrBrackets[i+1] == '}' || arrBrackets[i+1] == ')') {
+//                 console.log("sequence is corrupted3")
+//                 break
+//             }
+//         }
+//         console.log(curly, round, square)
+//         switch (arrBrackets[i]){
+//             case "{": curly++
+//             case "(": round++
+//             case "[": square++
+//             case "}": curly--
+//             case ")": round--
+//             case "]": square--
+//         }    
+//     }
+// }
+// if (i == (arrBrackets.length-1) && curly+round+square == 0) console.log("array is perfectly paired!")
 
 // Креативное задание*(не показываем решение до понедельника):
 // Внедрите в свой код про кофе цикл, там, где это может понадобиться. Добавьте комментарии в код с пояснениями изменений,
