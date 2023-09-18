@@ -42,14 +42,25 @@
 //     }
 // }
 
-let arr = [1,2,3,4,5,6,7,8,9,0]
-for (let line = 1; line < (arr.length*2); line++){
+// let arr = [1,2,3,4,5,6,7,8,9,0]
+// for (let line = 1; line < (arr.length*2); line++){
+//     let str = ""
+//     let counter = Math.abs(arr.length-line)
+//     for (let space = counter; space > 0; space--) str += " "
+//     let col = 0
+//     for (col = 0; col < (arr.length-counter-1); col++) str += arr[col]
+//     for (col; col >= 0; col--) str += arr[col]
+//     console.log(str);
+// }
+
+size = 10
+for (let line = 1; line < size*2; line++){
     let str = ""
-    let counter = Math.abs(arr.length-line)
+    let counter = Math.abs(size-line)
     for (let space = counter; space > 0; space--) str += " "
     let col = 0
-    for (col = 0; col < (arr.length-counter-1); col++) str += arr[col]
-    for (col; col >= 0; col--) str += arr[col]
+    for (col = 1; col < (size-counter); col++) str += col % 10
+    for (col; col > 0; col--) str += col % 10
     console.log(str);
 }
 

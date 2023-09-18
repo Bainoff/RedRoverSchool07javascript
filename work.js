@@ -1,12 +1,21 @@
-function stringy(size) {
-    let str = "";
-    let bool = false;
-  for (let i = 0; i < size; i++){
-    bool = !bool;
-  str = str + +bool
-  }
-  return str
-  }
+num = 2
 
+console.log(typeof num)
 
-  console.log(stringy(11))
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question('какое у вас время (в часах)?', time => {
+  
+        if (time >= 6  && time < 12 ) {
+           console.log( 'Доброе утро' );
+        } else if (time >=  12 && time < 18 ) {
+           console.log( 'Добрый день' );
+        } else {
+           console.log( 'Добрый вечер' );
+        }   
+
+  readline.close();
+});11
