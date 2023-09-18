@@ -9,54 +9,86 @@
 // - Компоненты кофе не влияют на стоимость.
 // - Используйте подходящую комбинацию условий if, (else if), else для решения задачи.
 
-let coffee = `americano`
-let size = `big`
-
 let latteName = `LATTE`
 let cappucchinoName = `CAPPUCCHINO`
 let americanoName = `AMERICANO`
-let latteRec = `water, coffee, plenty of milk`
-let cappucchinoRec = `water, coffee, some milk`
-let americanoRec = `some water, a lot of coffee`
+let waterPrice = 2
+let coffeePrice = 50
+let milkPrice = 10
+let sugarPrice = 20
+let sugarPortion = sugarPrice * 0.005
+let sugarAmount = 0
 let smallCoeff = 0.7
 let mediumCoeff = 1
 let bigCoeff = 1.3
-let latteCost = 7
-let cappucchinoCost = 6
-let americanoCost = 5
-switch (coffee) {
-    case `latte`: {
-        console.log(`drink name is ${latteName}, recipe: ${latteRec}, `)
-        switch (size) {
-            case `small`: console.log(`cost = ` + latteCost*smallCoeff); break
-            case `medium`: console.log(`cost = ` + latteCost*mediumCoeff); break
-            case `big`: console.log(`cost = ` + latteCost*bigCoeff); break
-            default: console.log(`enter correct cup size`)
-        }
-        break
-    }    
-    case `cappucchino`: {
-        console.log(`drink name is ${cappucchinoName}, recipe: ${cappucchinoRec}, `)
-        switch (size) {
-            case `small`: console.log(`cost = ` + cappucchinoCost*smallCoeff); break
-            case `medium`: console.log(`cost = ` + cappucchinoCost*mediumCoeff); break
-            case `big`: console.log(`cost = ` + cappucchinoCost*bigCoeff); break
-            default: console.log(`enter correct cup size`)
-        }
-        break
+
+console.log(coffee("cappucchino", "big", 2))
+function coffee(drinkType, size, sugarAmount) {
+function recipe(drinkType){
+    switch (drinkType) {
+        case `latte`: return `${latteName}'s, recipe: water, coffee, plenty of milk.`
+        case `cappucchino`: return `${cappucchinoName}'s, recipe: water, coffee, some milk.`
+        case `americano`: return `${americanoName}'s, recipe: some water, a lot of coffee.`
+        default: return "enter correct coffee type"
     }
-    case `americano`: {
-        console.log(`drink name is ${americanoName}, recipe: ${americanoRec}, `)
-        switch (size) {
-            case `small`: console.log(`cost = ` + americanoCost*smallCoeff); break
-            case `medium`: console.log(`cost = ` + americanoCost*mediumCoeff); break
-            case `big`: console.log(`cost = ` + americanoCost*bigCoeff); break
-            default: console.log(`enter correct cup size`)
-        }
-        break
-    }    
-    default: console.log(`enter correct coffee type`)
+}    
+
+function calc(drinkType, sugarAmount){
+    if (sugarAmount < 0 || typeof(sugarAmount) != "number") return "enter correct sugar amount"
+    switch (drinkType) {
+        case `latte`: return waterPrice * 0.1 + coffeePrice * 0.01 + milkPrice * 0.09 + sugarPortion * sugarAmount
+        case `cappucchino`: return waterPrice * 0.09 + coffeePrice * 0.02 + milkPrice * 0.09 + sugarPortion * sugarAmount
+        case `americano`: return waterPrice * 0.1 + coffeePrice * 0.03 + sugarPortion * sugarAmount  
+    }
 }
+function sizeCoeff(drinkType, size) {
+    switch (size) {
+        case `small`: return calc(drinkType, sugarAmount) * smallCoeff
+        case `medium`: return calc(drinkType, sugarAmount) * mediumCoeff
+        case `big`: return calc(drinkType, sugarAmount) * bigCoeff
+        default: return "enter correct cup size"
+    }
+}
+switch (true){
+    case (recipe(drinkType) == "enter correct coffee type"): return "enter correct coffee type"
+    case (calc(drinkType, sugarAmount) == "enter correct sugar amount"): return "enter correct sugar amount"
+    case (sizeCoeff(drinkType, size) == "enter correct cup size"): return "enter correct cup size"
+    default: return `${recipe(drinkType)} \nYour ${size} cup of ${drinkType} with ${sugarAmount} portions of sugar cost is ${sizeCoeff(drinkType, size)}$`
+}
+}
+// function coffee2(drink, size) {
+//     switch (drink) {
+//         case `latte`: {
+//             console.log(`drink name is ${latteName}, recipe: ${latteRec}`)
+//             switch (size) {
+//                 case `small`: return console.log(`cost = ` + latteCost*smallCoeff + "$")
+//                 case `medium`: return console.log(`cost = ` + latteCost*mediumCoeff + "$")
+//                 case `big`: return console.log(`cost = ` + latteCost*bigCoeff + "$")
+//                 default: return console.log(`enter correct cup size`)
+//             }
+//         }    
+//         case `cappucchino`: {
+//             console.log(`drink name is ${cappucchinoName}, recipe: ${cappucchinoRec}`)
+//             switch (size) {
+//                 case `small`: return console.log(`cost = ` + cappucchinoCost*smallCoeff + "$")
+//                 case `medium`: return console.log(`cost = ` + cappucchinoCost*mediumCoeff + "$")
+//                 case `big`: return onsole.log(`cost = ` + cappucchinoCost*bigCoeff + "$")
+//                 default: return console.log(`enter correct cup size`)
+//             }
+//         }
+//         case `americano`: {
+//             console.log(`drink name is ${americanoName}, recipe: ${americanoRec}`)
+//             switch (size) {
+//                 case `small`: return console.log(`cost = ` + americanoCost*smallCoeff + "$")
+//                 case `medium`: return console.log(`cost = ` + americanoCost*mediumCoeff + "$")
+//                 case `big`: return console.log(`cost = ` + americanoCost*bigCoeff + "$")
+//                 default: return console.log(`enter correct cup size`)
+//             }
+//         }    
+//         default: console.log(`enter correct coffee type`)
+//     }
+// }
+
 
 // HOMEWORK 4
 // Внедрите в свой код про кофе цикл, там, где это может понадобиться.
