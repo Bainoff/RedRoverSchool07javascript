@@ -11,20 +11,10 @@ console.log(palindrom("John"));
 console.log(palindrom("A roza upala na lapu Azora"));
 
 function palindrom(pal) {
-  pal = pal.toLowerCase();
-  let arr = pal.split("");
-  console.log(arr);
-for (let i = 0; i < arr.length; i++){
-    if (arr[i] != "[a-z]/i") {
-        arr.splice(arr[i], 1)
-        console.log(i)
-        
-    }
-}
-  console.log(arr);
+  pal = pal.toLowerCase().split(" ").join("");
   let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] != arr[arr.length - 1 - i]) count++;
+  for (let i = 0; i < pal.length; i++) {
+    if (pal[i] != pal[pal.length - 1 - i]) count++;
   }
   return !count > 0;
 }
