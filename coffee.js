@@ -12,17 +12,19 @@
 let latteName = `LATTE`
 let cappucchinoName = `CAPPUCCHINO`
 let americanoName = `AMERICANO`
+
 let waterPrice = 2
 let coffeePrice = 50
 let milkPrice = 10
 let sugarPrice = 20
 let sugarPortion = sugarPrice * 0.005
-let sugarAmount = 0
+
 let smallCoeff = 0.7
 let mediumCoeff = 1
 let bigCoeff = 1.3
 
 console.log(coffee("cappucchino", "big", 2))
+
 function coffee(drinkType, size, sugarAmount) {
 function recipe(drinkType){
     switch (drinkType) {
@@ -53,7 +55,7 @@ switch (true){
     case (recipe(drinkType) == "enter correct coffee type"): return "enter correct coffee type"
     case (calc(drinkType, sugarAmount) == "enter correct sugar amount"): return "enter correct sugar amount"
     case (sizeCoeff(drinkType, size) == "enter correct cup size"): return "enter correct cup size"
-    default: return `${recipe(drinkType)} \nYour ${size} cup of ${drinkType} with ${sugarAmount} portions of sugar cost is ${sizeCoeff(drinkType, size)}$`
+    default: return `${recipe(drinkType)} \nYour ${size} cup of ${drinkType} with ${sugarAmount} portions of sugar cost is ${sizeCoeff(drinkType, size).toFixed(2)}$`
 }
 }
 // function coffee2(drink, size) {
@@ -104,3 +106,6 @@ switch (true){
 
 // FUNCTIONS
 // Доработайте свой код с кофе и продумайте бизнес модель для своего кода.
+
+// HOMEWORK 6
+// Пересмотрите код с кофе и замените методами, если возможно

@@ -1,9 +1,12 @@
-function secondSymbol(s, symbol) {
-   let count = 0
-   for (let i = 0; i < s.length; i++) {
-     if (s.charAt(i) == symbol) count++
-     if (count == 2) return i
+function nthFibo(n) {
+   let i = 1
+   let predback = 0
+   let back = 1
+   let fib = 0
+   for (i = 1; i < n; i++){
+      predback = back
+      back = fib
+      fib = predback + back
    }
-   if (count < 2) return -1
+   return fib
  }
- console.log(secondSymbol('Hello world!!!','A'))
