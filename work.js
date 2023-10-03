@@ -10,12 +10,12 @@
 //    }
 //    return fib
 //  }
-function firstToLast(str,c){
-   if (!str.includes('c')) return -1
-   if (str.indexOf('c') == str.lastIndexOf('c')) return 0
-   else return str.lastIndexOf('c') - str.indexOf('c')
-   
- }
-console.log(firstToLast("ababc","a"))
-firstToLast("ababc","c")
-firstToLast("ababc","d")
+function sumMul(n,m){
+  if ((n+m) <= 0) return "INVALID"
+  let sum = 0
+  for (let i = n; i < m; i=i+n) {
+    sum += i
+  }
+  return sum
+}
+console.log(sumMul(2, 9))
