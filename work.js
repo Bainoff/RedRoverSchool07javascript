@@ -10,12 +10,14 @@
 //    }
 //    return fib
 //  }
-function sumMul(n,m){
-  if ((n+m) <= 0) return "INVALID"
-  let sum = 0
-  for (let i = n; i < m; i=i+n) {
-    sum += i
+
+let arr = ["d", "u", "x"]
+function numObj(s){
+  let arr1 = []
+  for (let i in s){
+    arr1.push({[i]: String(s[i].charCodeAt(0))})
   }
-  return sum
+  return arr1
 }
-console.log(sumMul(2, 9))
+
+console.log(numObj(arr))
