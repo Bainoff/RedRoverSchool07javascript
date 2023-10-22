@@ -1,0 +1,19 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "coffee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bainoff/RedRoverSchool07javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bainoff/RedRoverSchool07javascript/issues"
+  },
+  "homepage": "https://github.com/Bainoff/RedRoverSchool07javascript#readme"
+}

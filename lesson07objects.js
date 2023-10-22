@@ -184,11 +184,11 @@ const person = {
 // ==================  Добавление свойства(property)  ================================
 
 
-// === создаем объект
+// // === создаем объект
 // const obj = {};
 // console.log(obj)
 
-// === присваиваем значения
+// // === присваиваем значения
 // obj.name = 'Jess'; 
 // obj['age'] = 55;
 // console.log(obj);
@@ -204,6 +204,7 @@ const person = {
 // obj[carModel] = model;
 // console.log(obj)
 // obj['carModel'] = 'Toyota';
+// console.log(obj)
 // console.log(typeof obj.car);
 
 
@@ -228,28 +229,28 @@ const person = {
 // console.log(user)
 // ============= Обращение к свойствам объекта ====================
 // 
-let arr = [1,3,5,7]
-const customers = [
-  {               //   !!! Array[0]
-    id: '01',                //
-    personalInfo: {  name: { first: 'John', last: 'Dow'}, },},
+// let arr = [1,3,5,7]
+// const customers = [
+//   {               //   !!! Array[0]
+//     id: '01',                //
+//     personalInfo: {  name: { first: 'John', last: 'Dow'}, },},
 
-  {                //    !!! Array[1]
-    id: '02',                //
-    personalInfo: {          //
-      name: {                //
-        first: 'Jane',       //
-        last: 'Dow',         //
-      },
-      dob: '01/01/1990',         //
-      "contactInfo": {           //
-        phone: '+123456789',     //
-        email: [3,7,[4,8]],             //
-        address: null,           //
-      },
-    },
-     purchases: [{two: 2},6, 3],           //
-  }];
+//   {                //    !!! Array[1]
+//     id: '02',                //
+//     personalInfo: {          //
+//       name: {                //
+//         first: 'Jane',       //
+//         last: 'Dow',         //
+//       },
+//       dob: '01/01/1990',         //
+//       "contactInfo": {           //
+//         phone: '+123456789',     //
+//         email: [3,7,[4,8]],             //
+//         address: null,           //
+//       },
+//     },
+//      purchases: [{two: 2},6, 3],           //
+//   }];
 
 // 1. Свойства 1-го уровня -array elements
   // console.log(customers.length);
@@ -307,14 +308,13 @@ const customers = [
 //       newObj: { age1: 23 }
 //    },
 // };
-//console.log(obj);
+// console.log(obj);
 
-  // console.log("firstName" in obj);
-  // console.log("first" in obj);
-  // console.log(undefined in obj);
-  // console.log( 'age1' in obj.job.newObj);  // can't check by value
-  // console.log(obj.newKey === undefined);
-
+//   console.log("firstName" in obj);
+//   console.log("first" in obj);
+//   console.log(undefined in obj);
+//   console.log( 'age1' in obj.job.newObj);  // can't check by value
+//   console.log(obj.newKey === undefined);
 
 // ================== Example
 // let userInfo = {
@@ -465,15 +465,15 @@ const customers = [
 
 // ======== перебор в цикле
 //console.log('===========');
-let user3 = {
-  name: {name: "Kate", age2 : 22},
-  age: 30,
-  language: 'en',
-  home: 'apartment',
-  number: 6
-}
- console.log("Values: ", Object.values(user3.name));
-// // перебор значений -checking values
-for (let i of Object.values(user3.name)) {
-  console.log(i); 
-}
+// let user3 = {
+//   name: {name: "Kate", age2 : 22},
+//   age: 30,
+//   language: 'en',
+//   home: 'apartment',
+//   number: 6
+// }
+//  console.log("Values: ", Object.values(user3.name));
+// // // перебор значений -checking values
+// for (let i of Object.values(user3.name)) {
+//   console.log(i); 
+// }

@@ -9,23 +9,23 @@
 // - Компоненты кофе не влияют на стоимость.
 // - Используйте подходящую комбинацию условий if, (else if), else для решения задачи.
 
-let latteName = `LATTE`
-let cappucchinoName = `CAPPUCCHINO`
-let americanoName = `AMERICANO`
+// let latteName = `LATTE`
+// let cappucchinoName = `CAPPUCCHINO`
+// let americanoName = `AMERICANO`
 
-let waterPrice = 2
-let coffeePrice = 50
-let milkPrice = 10
-let sugarPrice = 20
-let sugarPortionPrice = sugarPrice * 0.005
-let norm = [] // [water, coffee, milk] quantities
+// let waterPrice = 2
+// let coffeePrice = 50
+// let milkPrice = 10
+// let sugarPrice = 20
+// let sugarPortionPrice = sugarPrice * 0.005
+// let norm = [] // [water, coffee, milk] quantities
 
-let smallCoeff = 0.7
-let mediumCoeff = 1
-let bigCoeff = 1.3
+// let smallCoeff = 0.7
+// let mediumCoeff = 1
+// let bigCoeff = 1.3
 
-console.log(coffee("latte", "big", 2))
-
+// console.log(coffee("latte", "big", 2))
+class Coffee{
 function coffee(drinkType, size, sugarAmount) {
 
 function recipe(drinkType){
@@ -78,7 +78,7 @@ switch (true){
     default: return `${recipe(drinkType)} \nYour ${size} cup of ${drinkType} ${sugar(sugarAmount)} cost is ${sizeCoeff(size).toFixed(2)}$`
 }
 }
-
+}
 // HOMEWORK 4
 // Внедрите в свой код про кофе цикл, там, где это может понадобиться.
 // Добавьте комментарии в код с пояснениями изменений, зачем они нужны.
